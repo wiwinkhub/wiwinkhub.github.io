@@ -60,17 +60,26 @@ Setelah deployment pertama, untuk update website:
 
 ## Troubleshooting
 
-### Website tidak muncul
-- Cek Settings > Pages apakah branch `gh-pages` sudah dipilih
+### Website tidak muncul / Blank page
+- **Cek browser console** untuk error messages
+- Pastikan Settings > Pages sudah memilih branch `gh-pages`
 - Tunggu 2-5 menit setelah deploy pertama kali
+- Clear cache browser (Ctrl+Shift+R atau Cmd+Shift+R)
+- Pastikan file `.nojekyll` ada di root GitHub Pages branch
 
 ### Error saat deploy
 - Pastikan sudah login ke GitHub: `git config --global user.email "your-email@example.com"`
 - Pastikan repository sudah terhubung: `git remote -v`
+- Jika error "Failed to get remote", cek apakah repository exists di GitHub
 
-### Routing tidak bekerja (404 error)
+### Routing tidak bekerja (404 error saat refresh)
 - File `404.html` dan script di `index.html` sudah menangani ini
 - Pastikan folder `public` ter-copy ke `dist` saat build
+- React Router sudah dikonfigurasi dengan `basename="/"`
+
+### Assets tidak load (404 error untuk .js/.css)
+- Vite config sudah menggunakan `base: '/'` untuk root deployment
+- Check apakah path di `dist/index.html` menggunakan `/assets/` (absolute path)
 
 ## Catatan Teknis
 
