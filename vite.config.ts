@@ -5,10 +5,9 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // Use VITE_BASE_PATH from environment for GitHub Pages, fallback to '/'
-  // For GitHub Pages repo deployment: set VITE_BASE_PATH=/repo-name/
-  // For custom domain or username.github.io: use default '/'
-  base: process.env.VITE_BASE_PATH || '/',
+  // Use relative paths for GitHub Pages deployment
+  // This ensures assets load correctly regardless of deployment location
+  base: './',
   server: {
     host: "0.0.0.0",
     port: 5000,
