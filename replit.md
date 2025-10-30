@@ -58,15 +58,18 @@ Preferred communication style: Simple, everyday language.
 **Replit Environment**
 - Development server runs on port 5000
 - Host configured as 0.0.0.0 for network accessibility
+- Allowed hosts enabled for iframe access
 - Workflow: `bun run dev` for development server
 
 **GitHub Pages Support**
+- Target URL: https://wiwinkhub.github.io/
 - Automated deployment via gh-pages package (v6.3.0)
-- Configurable base path through VITE_BASE_PATH environment variable
-- Default base path: '/' (for custom domains or username.github.io)
-- For repository subpath: set VITE_BASE_PATH=/repo-name/ before deploy
+- Base path: '/' (root directory) for user site deployment
+- SPA routing support via 404.html redirect mechanism
+- Jekyll bypass enabled with .nojekyll file
+- Homepage configured in package.json
 - Build scripts: `bun run build`, `bun run deploy` (includes predeploy build step)
-- See GITHUB_PAGES_DEPLOYMENT.md for complete deployment guide
+- See GITHUB_PAGES_DEPLOYMENT.md for complete deployment guide with step-by-step instructions
 
 **Build Optimization**
 - SWC-based React plugin for faster builds
